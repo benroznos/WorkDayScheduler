@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <!-- Timeblocks go here -->
+      <div class="time-block">
+        <div class="time">9:00</div><textarea name="date" id="nine" cols="30" rows="10">none</textarea>
+        <button class= 'saveBtn' id='9'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">10:00</div><textarea name="date" id="ten" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='10'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">11:00</div><textarea name="date" id="eleven" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='11'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">12:00</div><textarea name="date" id="twelve" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='12'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">1:00</div><textarea name="date" id="one" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='1'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">2:00</div><textarea name="date" id="two" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='2'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">3:00</div><textarea name="date" id="three" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='3'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">4:00</div><textarea name="date" id="four" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='4'> save</button>
+      </div>
+      <div class="time-block">
+        <div class="time">5:00</div><textarea name="date" id="five" cols="30" rows="10">none</textarea>
+        <button class='saveBtn' id='5'> save</button>
+      </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script>
+    // load time on page load
+    let time = moment().format('MMM Do YYY, h:mm:ss a')
+    $('#currentDay').text(time)
+
+    // functions for saving items to local storage
+    $('#9').click(function(){
+      let nine = $('#nine').val()
+      localStorage.setItem('9',nine)
+    })
+    $('#10').click(function () {
+        let nine = $('#ten').val()
+        localStorage.setItem('10', nine)
+      })
+    $('#11').click(function () {
+        let nine = $('#eleven').val()
+        localStorage.setItem('11', nine)
+      })
+    $('#12').click(function () {
+        let nine = $('#twelve').val()
+        localStorage.setItem('12', nine)
+      })
+    $('#1').click(function () {
+        let nine = $('#one').val()
+        localStorage.setItem('1', nine)
+      })
+    $('#2').click(function () {
+        let nine = $('#two').val()
+        localStorage.setItem('2', nine)
+      })
+    $('#3').click(function () {
+        let nine = $('#three').val()
+        localStorage.setItem('3', nine)
+      })
+    $('#4').click(function () {
+        let nine = $('#four').val()
+        localStorage.setItem('4', nine)
+      })
+    $('#5').click(function () {
+        let nine = $('#five').val()
+        localStorage.setItem('5', nine)
+      })
+    // set items to local storage values on page load
+    let a = localStorage.getItem('9')
+    let b = localStorage.getItem('10')
+    let c = localStorage.getItem('11')
+    let d = localStorage.getItem('12')
+    let e = localStorage.getItem('1')
+    let f = localStorage.getItem('2')
+    let g = localStorage.getItem('3')
+    let h = localStorage.getItem('4')
+    let i = localStorage.getItem('5')
+    console.log(a)
+    if(a!== null){
+      $('#nine').text(`${a}`)
+    }
+    if (b !== null) {
+        $('#ten').text(`${b}`)
+      }
+    if (c !== null) {
+        $('#eleven').text(`${c}`)
+      }
+    if (d !== null) {
+        $('#twelve').text(`${d}`)
+      }
+    if (e !== null) {
+        $('#one').text(`${e}`)
+      }
+    if (f !== null) {
+        $('#two').text(`${f}`)
+      }
+    if (g !== null) {
+        $('#three').text(`${g}`)
+      }
+    if (h !== null) {
+        $('#four').text(`${h}`)
+      }
+    if (i !== null) {
+        $('#five').text(`${i}`)
+      }
+  
+  </script>
+</body>
+
+</html>
